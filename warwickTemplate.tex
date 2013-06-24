@@ -1,0 +1,171 @@
+% This prograpm can be redistributed and/or modified under the terms
+% of the GNU Public License, version 3.
+%
+%initial template: Seth Brown, Ph.D.
+%
+% Adapted by: Anas A Rana 
+% 
+%
+% Compiled with XeLaTeX
+% Dependencies:
+% Fontin Sans font (http://www.exljbris.com/fontinsans.html)
+% 
+% To choose different backgrounds change the background used AND the theme for the colors
+% The two thems are warwick and warwickWhite
+
+
+\documentclass{beamer}
+\usepackage{etex}
+
+% some tikz packages
+\usepackage{tikz}
+\usepackage{pstricks}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows,automata,shadows,patterns,shapes}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{graphicx} % graphics
+\usepackage{epsfig} % eps graphics
+\usepackage{hyperref} % urls
+\usepackage{booktabs, caption} % table styling
+\graphicspath{{pics/}} %will assume graphics are in ./pic
+
+% suppress navigation bar
+\beamertemplatenavigationsymbolsempty
+
+\mode<presentation>
+{
+  \usetheme{warwick}
+  % \usetheme{warwickWhite}
+  % \setbeamercovered{transparent}
+  \setbeamertemplate{items}[circle]
+}
+
+% set fonts
+\usepackage{fontspec}
+\setsansfont{Fontin Sans}
+\setbeamerfont{frametitle}{size=\LARGE,series=\bfseries}
+
+% color definitions
+\usepackage{color}
+\definecolor{uipoppy}{RGB}{225, 64, 5}
+\definecolor{uipaleblue}{RGB}{96,123,139}
+\definecolor{uiblack}{RGB}{0, 0, 0}
+
+% caption styling
+\DeclareCaptionFont{uiblack}{\color{uiblack}}
+\DeclareCaptionFont{uipoppy}{\color{uipoppy}}
+\captionsetup{labelfont={uipoppy},textfont=uiblack}
+
+% see the macros.tex file for definitions
+\include{macros}
+
+% title slide definition
+\title{Analysing existence of states}
+\author{Anas A Rana}
+\institute[University of Warwick]
+{
+Complexity Science \\
+University of Warwick \\
+NKI-Amsterdam\\
+}
+
+\date{\today}
+
+%--------------------------------------------------------------------
+%                           Introduction
+%--------------------------------------------------------------------
+
+\begin{document}
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{frontpage_bg}}
+\setbeamertemplate{footline}[default]
+
+\begin{frame}
+\vspace{2cm}
+\begin{columns}
+\column{2.75in}
+  \titlepage
+  \vspace{10cm}
+\column{2.0in}
+\end{columns}
+\end{frame}
+
+\section{Introduction}
+%-------------------------------------------------------------------
+%                          Section 1
+%-------------------------------------------------------------------
+%
+% Set the background for the rest of the slides.
+% Insert infoline
+ % \setbeamertemplate{footline}[warwickWhite] 
+% \setbeamertemplate{background}
+%  {\includegraphics[width=\paperwidth,height=\paperheight]{slideBg.png}}
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slideBg.png}}
+\setbeamertemplate{footline}[warwick]
+
+\section{Preliminary findings}
+\frame{\frametitle{Identifiability}
+  \begin{columns}[t]
+    \column{0.45\textwidth}
+    \begin{block}{Biological example}
+      \begin{itemize}
+      \item Two proteins in a system
+      \item Antigen that binds to both 
+      \item Impossible to tell which one binds
+    \end{itemize}
+  \end{block}
+  \column{0.55\textwidth}
+  \begin{block}{Definition}
+    \begin{itemize}
+    \item Different parameter values correspond to the same model 
+    \item Model is unidentifiable 
+    \end{itemize}
+   \end{block}
+ \end{columns}
+\vspace{1cm}
+\begin{equation*}
+\tilde{X}(t)=Pr(\tau>t) A_1^{t}\;x(0) + \sum_{j=0}^{t-1}\;Pr(j<\tau \leq j+1)\;A_2^{t-j}A_1^j\;x(0)
+\end{equation*}
+
+
+}
+
+
+\section{Data}
+\frame{ \frametitle{Data sets}
+
+\vspace{1cm} % generate some space between title and content
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{lcc} \bottomrule[2pt]
+         & ER-Src &  pBABE \\ \bottomrule 
+        Tamoxifen (TAM) & $  9$ timepoints &  $4$ timepoints \\
+        Ethanol & $3$ timepoints & $3$ timepoints \\
+    \bottomrule[2pt]
+    \end{tabular}
+    \caption{Combinations of drugs in different runs} 
+\end{table}
+\vspace{-0.6cm} % compact spacing between table and text
+
+    \begin{columns}[t]
+    \column{0.5\textwidth}
+    \begin{block}{ER-Src}
+    \begin{itemize}
+        \item Src expression leads to development of cancers
+    \end{itemize}
+    \end{block}
+    \column{0.5\textwidth}
+    \begin{block}{pBABE}
+      \begin{itemize}
+      \item Retroviral vector, delivers genes into genome
+      \item Empty insertion to check position of insertion
+      \end{itemize}
+
+    \end{block}
+    \end{columns}
+    \textref{Hirsch et al. 2010}
+}
+
+\end{document}
