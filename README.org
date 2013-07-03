@@ -1,6 +1,17 @@
-Beamer template
-===============
+#+TITLE: Beamer template
+
 With a little work using a text editor and image manipulation it can be adapted to your own needs.
 
-Beamer template using University of Warwick, UK, official colours and logos. This theme is based on the theme by [[http://www.drbunsen.org/designing-a-beamer-template-theme/][Dr. Bunsen]]. 
-When compiling you need to use XeTeX since I use a non standard font (Fontin Sans), but if you comment out that section you can compile it with pdflatex as well.
+Beamer template using University of Warwick, UK, official colours and logos. This theme is based on the theme by [[http://www.drbunsen.org/designing-a-beamer-template-theme/][Dr. Bunsen]].
+
+* Usage
+  
+  When compiling you need to use XeTeX since I use a non standard font (Fontin Sans), but if you comment out that section you can compile it with pdflatex as well.
+  
+
+** Changing title page
+   The title page background is saved as a png, use [[file:pics/frontpage_bg.svg][frontpage_bg.svg]] and use the right ratios to change it. The title location is adjusted for it.
+
+** Slide header
+   The header for slides is saved under [[file:pics/slideBgWhite.png][slideBgWhite]] or [[file:pics/slideBg.png][slideBg]]. Use =\usetheme{warwick}= or =\usetheme{warwickWhite}=, for the blue or white background respectively. 
+   
