@@ -1,3 +1,4 @@
+#+ATTR_HTML: :title The Org mode homepage :style color:red;
 #+TITLE: Beamer template
 
 With a little work using a text editor and image manipulation it can be adapted to your own needs.
@@ -14,4 +15,6 @@ Beamer template using University of Warwick, UK, official colours and logos. Thi
 
 ** Slide header
    The header for slides is saved under [[file:pics/slideBgWhite.png][slideBgWhite]] or [[file:pics/slideBg.png][slideBg]]. Use =\usetheme{warwick}= or =\usetheme{warwickWhite}=, for the blue or white background respectively. 
-   
+
+*** Downloads
+Feel free to fork or clone the project. You can also download the zip file, [[https://github.com/anasrana/beamer-template/archive/master.zip][here]].
